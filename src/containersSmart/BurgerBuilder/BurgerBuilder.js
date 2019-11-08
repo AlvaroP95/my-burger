@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Helper from '../../hoc/Helper';
+import Helper from '../../hoc/Helper/Helper';
 import Burger from '../../componentsDumb/Burger/Burger';
 import BuildControls from '../../componentsDumb/Burger/BuildControls/BuildControls';
 import Modal from '../../componentsDumb/UI/Modal/Modal';
@@ -28,6 +28,10 @@ export default class BurgerBuilder extends Component {
         totalPrice: 4,
         purchaseable: false,
         purchasing: false
+    }
+
+    purchaseContinueHandler = () => {
+        alert('You continue!');
     }
 
     purchaseCancelHandler = () => {
@@ -94,8 +98,12 @@ export default class BurgerBuilder extends Component {
                 <Modal 
                     show={this.state.purchasing}
                     modalClosed={this.purchaseCancelHandler}>
-                    <OrderSummary 
-                        ingredients={this.state.ingredients}/>
+                    <OrderSummary
+                        ingredients={this.state.ingredients}
+                        price={this.state.totalPrice}
+                        purchaseCanceled={this.purchaseCancelHandler}
+                        purchaseContinued={this.purchaseContinueHandler}
+                    />
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>
                 <BuildControls
