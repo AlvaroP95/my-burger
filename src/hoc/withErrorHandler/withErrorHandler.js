@@ -18,7 +18,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
         }
         
         componentWillUnmount(){//esto es por si tiene muchas páginas crearía un withErrorHandler por cada una
-            console.log("[withErrorHandler] will unmount", this.reqInterceptor, this.resInterceptor);
+            // console.log("[withErrorHandler] will unmount", this.reqInterceptor, this.resInterceptor);
             axios.interceptors.request.eject(this.reqInterceptor);
             axios.interceptors.request.eject(this.resInterceptor);
         }
