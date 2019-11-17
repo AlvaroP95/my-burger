@@ -9,12 +9,15 @@ import registerServiceWorker from './registerServiceWorker';
 import thunk from 'redux-thunk';
 import burgerBuilderReducer from './store/reducers/burgerBuilder';
 import orderReducer from './store/reducers/order';
+import authReducer from './store/reducers/auth';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
+//si process.env.NODE_ENV es === development (o si se está en desarrollo y no deployado) entonces se puede ver el redux_devtools. es un paso extra de seguridad, si se está deployando entonces no pueden usar las redux_devtools
 
 const rootReducer = combineReducers({
     burgerBuilder: burgerBuilderReducer,
-    order: orderReducer
+    order: orderReducer,
+    auth: authReducer
 })
 
 const store = createStore(
