@@ -32,7 +32,7 @@ const BuildControls = (props) => {
             >
                 {props.isAuthenticated 
                     ? 'ORDER NOW' 
-                    : 'SIGN UP TO ORDER'
+                    : 'SIGN IN TO ORDER'
                 }
             </button>
         </div>

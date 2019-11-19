@@ -1,5 +1,4 @@
 import * as actionTypes from './actionsTypes';
-import axios from '../../axios-orders';
 
 export const addIngredient = name => {
     return{
@@ -28,14 +27,7 @@ export const fetchIngredientsFailed = () => {
     }
 }
 export const initIngredients = () => {
-    //thunk me deja usar los action creators así, con dispatch
-    return dispatch => {
-        axios.get('https://react-my-burger-5a221.firebaseio.com/ingredients.json')
-            .then(response => {
-                dispatch(setIngredients(response.data))
-            })
-            .catch(error => {
-                dispatch(fetchIngredientsFailed())
-        })
+    return{
+        type: actionTypes.INIT_INGREDIENTS
     }
 }
