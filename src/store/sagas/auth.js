@@ -5,12 +5,12 @@ import { put, call } from 'redux-saga/effects';
 import axios from 'axios'
 
 export function* logoutSaga(action){ 
-    //se puede hacer esto 
+    //I can do this 
     yield call([localStorage, 'removeItem'], "token")  
     yield call([localStorage, 'removeItem'], "localStorage")
     yield call([localStorage, 'removeItem'], "userId")  
     
-    //o esto
+    //Or this
     // yield localStorage.removeItem('token');
     // yield localStorage.removeItem('expirationTime');
     // yield localStorage.removeItem('userId');

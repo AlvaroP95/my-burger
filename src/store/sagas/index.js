@@ -10,6 +10,7 @@ export function* watchAuth(){
         takeEvery(actionTypes.AUTH_USER, authUserSaga),
         takeEvery(actionTypes.AUTH_CHECK_STATE, authCheckStateSaga),
     ]);
+    
     //es lo mismo
     // yield takeEvery(actionTypes.AUTH_CHECK_TIMEOUT, checkAuthTimeoutSaga);
     // yield takeEvery(actionTypes.AUTH_INITIATE_LOGOUT, logoutSaga);

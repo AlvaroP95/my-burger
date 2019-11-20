@@ -3,33 +3,34 @@ import classes from './Modal.css';
 import Helper from '../../../hoc/Helper/Helper';
 import Backdrop from '../Backdrop/Backdrop';
 
-class Modal extends Component {
-    shouldComponentUpdate (nextProps, nextState){
-        return nextProps.show !== this.props.show || nextProps.children !== this.props.children 
-        //esta linea tiene que estar porque el Spinner es un children y entonces no se renderizaría 
-        
-    }
+const modal = props => {
+    // shouldComponentUpdate (nextProps, nextState){
+        //shouldComponentUpdate is replaced by React.memo()
+    //     return nextProps.show !== props.show || nextProps.children !== props.children 
+    //     //shouldComponentUpdate should be because the Spinner is a children and then it won't be rendered        
+    // }
 
-    render(){
-        return (
-            <Helper>
-                <Backdrop 
-                    show={this.props.show} 
-                    clicked={this.props.modalClosed}
-                />
-                <div 
-                    className={classes.Modal}
-                    style={{
-                        transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
-                        opacity: this.props.show ? '1' : '0'
-                    }}
-                >
-                    {this.props.children}
-                </div>
-            </Helper>
-        )
-    }
+    return (
+        <Helper>
+            <Backdrop 
+                show={props.show} 
+                clicked={props.modalClosed}
+            />
+            <div 
+                className={classes.Modal}
+                style={{
+                    transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+                    opacity: props.show ? '1' : '0'
+                }}
+            >
+                {props.children}
+            </div>
+        </Helper>
+    )
 }
 
 
-export default Modal;
+export default React.memo(
+    modal,
+    (prevProps, nextProps) => nextProps.show === prevProps.show && nextProps.children === prevProps.children
+);
