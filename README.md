@@ -1,4 +1,5 @@
-Link to the app (mobile and desktop) https://react-my-burger-5a221.firebaseapp.com/
+## Link to the app (mobile and desktop)
+https://react-my-burger-5a221.firebaseapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
