@@ -1,10 +1,17 @@
 ## Link to the app (mobile and desktop)
 https://react-my-burger-5a221.firebaseapp.com/
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## App Information
+  This is a personal Web App, the first I create, used to enhance my habilities and learn useful good programmers skills like planning, handling frustration and commit/push features successfully in time, respecting deadlines.
+#### Technologies, dependencies and libraries
+- React
+- React-Router
+- Firebase (RealTime Database)
+- Redux
+- Axios
+- Redux-Thunk (first versions only)
+- Redux-Saga
+- React Hooks (late versions)
 
 ## Table of Contents
 
