@@ -2,7 +2,7 @@
 https://react-my-burger-5a221.firebaseapp.com/
 
 ## App Information
-  This is a personal Web App, the first I create, used to enhance my habilities and learn useful good programmers skills like planning, handling frustration and commit/push features successfully in time, respecting deadlines.
+  This is a personal Web App, the first I create, used to enhance my abilities and learn useful good programmers skills like planning, handling frustration and commit/push features successfully in time, respecting deadlines.
 #### Technologies, dependencies and libraries
 - React
 - React-Router
